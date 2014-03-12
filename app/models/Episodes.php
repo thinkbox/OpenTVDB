@@ -22,4 +22,9 @@ class Episodes extends BaseModel {
     {
         return  $this->belongsToMany('Actors', 'guests', 'episode_id', 'actor_id');
     }
+
+    public function image()
+    {
+        return $this->hasOne('Images', 'id', 'image_id');
+    }
 }

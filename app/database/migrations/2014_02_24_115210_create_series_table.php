@@ -27,8 +27,8 @@ class CreateSeriesTable extends Migration {
 		    $table->string('airtime')->nullable();
 		    $table->string('contentrating')->nullable();
 		    $table->integer('runtime')->nullable();
-			$table->integer('created_at');
-			$table->integer('updated_at');
+		    $table->string('status')->nullable();
+			$table->timestamps();
 		});
 	}
 

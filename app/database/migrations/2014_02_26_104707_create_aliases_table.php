@@ -16,8 +16,7 @@ class CreateAliasesTable extends Migration {
 			$table->increments('id');
 			$table->integer('series_id');
 			$table->string('name');
-			$table->integer('created_at');
-			$table->integer('updated_at');
+			$table->timestamps();
 		});
 	}
 

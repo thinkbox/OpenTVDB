@@ -15,20 +15,20 @@ class CreateEpisodesTable extends Migration {
 		Schema::create('episodes', function(Blueprint $table) {
 			$table->increments('id');
 			$table->integer('series_id');
-			$table->integer('season_id');
+			$table->integer('season_id')->nullable();
 			$table->string('name');
 			$table->integer('ep_number');
 			$table->integer('aired');
-			$table->integer('director_id');
-			$table->integer('writer_id');
+			$table->integer('director_id')->nullable();
+			$table->integer('writer_id')->nullable();
 			$table->text('overview');
 			$table->integer('dvd_season');
 			$table->integer('dvd_episode');
 			$table->integer('absolute');
 			$table->integer('scene_season');
 			$table->integer('scene_episode');
-			$table->integer('created_at');
-			$table->integer('updated_at');
+			$table->integer('image_id')->nullable();
+			$table->timestamps();
 		});
 	}
 

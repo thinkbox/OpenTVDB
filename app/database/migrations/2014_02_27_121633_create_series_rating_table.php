@@ -17,8 +17,7 @@ class CreateSeriesRatingTable extends Migration {
 			$table->integer('series_id');
 			$table->float('rating');
 			$table->integer('user_id');
-			$table->integer('created_at');
-			$table->integer('updated_at');
+			$table->timestamps();
 		});
 	}
 

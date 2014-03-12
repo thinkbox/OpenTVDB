@@ -17,6 +17,7 @@ ClassLoader::addDirectories(array(
 	app_path().'/controllers',
 	app_path().'/models',
 	app_path().'/database/seeds',
+    app_path().'/helpers',
 
 ));
 
@@ -45,10 +46,11 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 | shown, which includes a detailed stack trace during debug.
 |
 */
-
-App::error(function(Exception $exception, $code)
+App::error(function(Exception $exception)
 {
-	Log::error($exception);
+    $client = new \Raygun4php\RaygunClient("OIFbS/sq6HjmubD7xSweqw==");
+    $client->SendException($exception);
+    Log::error($exception);
 });
 
 /*
@@ -79,3 +81,7 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+App::bind('OpenTVDB\Images', function()  {
+    return new OpenTVDB\Images;
+});

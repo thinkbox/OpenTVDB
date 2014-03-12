@@ -15,8 +15,7 @@ class CreatNetworksTable extends Migration {
 		Schema::create('networks', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('network');
-			$table->integer('created_at');
-			$table->integer('updated_at');
+			$table->timestamps();
 		});
 	}
 

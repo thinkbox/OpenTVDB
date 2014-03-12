@@ -121,4 +121,13 @@ return array(
 
 	),
 
+
+	'mongodb' => array(
+		'host' => '12.0.0.1',
+		'port' => '27017',
+		'username' => '',
+		'password' => '',
+		'collection' => 'opentvdb_images'
+	),
+
 );
